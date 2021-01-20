@@ -19,6 +19,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
+                sh 'pwd;ls -al' 
                 sh 'cp spingwebdemo.war tomcat:/usr/local/tomcat/webapps/'
                 sh 'curl -I tomcat:8080/springwebdemo/'
             }
